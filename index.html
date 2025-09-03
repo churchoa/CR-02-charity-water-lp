@@ -6,11 +6,7 @@
   <title>charity: water</title>
   <style>
     /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: Arial, sans-serif;
@@ -33,14 +29,18 @@
       color: #f2a900; /* charity: water yellow */
     }
 
-    nav a {
+    nav a, nav button {
       margin: 0 1rem;
       text-decoration: none;
       color: #333;
       font-weight: 500;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
     }
 
-    nav a:hover {
+    nav a:hover, nav button:hover {
       color: #f2a900;
     }
 
@@ -51,6 +51,8 @@
       border-radius: 4px;
       cursor: pointer;
       font-weight: bold;
+      text-decoration: none;
+      color: #000;
     }
 
     .btn:hover {
@@ -64,23 +66,9 @@
     }
 
     .hero img {
-  width: 100%;
-  height: 650px; /* Increased height for more sky */
-  object-fit: cover;
-    }
-
-    .hero .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.3);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
+      width: 100%;
+      height: 650px; /* Increased height for more sky */
+      object-fit: cover;
     }
 
     .hero h1 {
@@ -89,27 +77,18 @@
       margin-bottom: 1rem;
     }
 
-    .hero p {
-      max-width: 600px;
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-    }
-
     .impact {
-      background: #f7f7f7;
+      background: #002244;
+      color: #fff;
       text-align: center;
-      padding: 2rem 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
+      padding: .5rem .25rem;
+      border-radius: 12px;
+      margin: 1px 10px;
     }
 
     .impact div {
-      background: #002244; /* deep blue */
-      color: #fff;
-      padding: 1rem 1.5rem;
-      border-radius: 6px;
       font-weight: bold;
+      margin: 5px 0;
     }
 
     footer {
@@ -119,46 +98,138 @@
       background: #f7f7f7;
       color: #555;
     }
+
+    /* ===== MODAL OVERLAY ===== */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(6px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .overlay:target {
+      display: flex;
+    }
+
+    .overlay-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .overlay-content h2 {
+      color: #002244;
+      margin-bottom: 1rem;
+    }
+
+    .overlay-content p {
+      margin-bottom: 1rem;
+    }
+
+    /* Close "X" button */
+    .overlay-content .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .overlay-content .close:hover {
+      color: #f2a900;
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <div class="logo" style="display:flex;align-items:center;gap:12px;">
-      <img src="img/cw_logo-2.png" alt="charity: water logo" style="height: 20px;">
+      <a href="#home">
+        <img src="img/cw_logo-2.png" alt="charity: water logo" style="height: 20px;">
+      </a>
     </div>
     <nav>
-      <a href="#">Take Action</a>
-      <a href="#">About Us</a>
-      <a href="#">Why Water?</a>
-      <a href="#">Sign In</a>
-      <button class="btn">Give 💧</button>
+      <a href="#takeaction">Take Action</a>
+      <a href="#about">About Us</a>
+      <a href="#whywater">Why Water?</a>
+      <a href="#signin">Sign In</a>
+      <a href="#give" class="btn">Give 💧</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="home">
     <img src="img/hero image.jpg" alt="Hero background">
     <div class="hero-headline" style="position:absolute;top:20px;left:0;right:0;z-index:2;text-align:center;">
       <h1>Just $10 Can Give Clean Water to Someone in Need</h1>
       <p style="margin:10px 0 0 0;font-size:1.1em;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;">Donating is easy and transparent. Each donation creates real impact, bringing health and hope to communities worldwide.</p>
     </div>
     <div style="position:absolute;left: 150px;bottom:64px;z-index:2;">
-      <button class="btn" style="font-size:1.0em;padding:1em 2.2em;">Make Your Impact Today!</button>
+      <a href="#give" class="btn" style="font-size:1.0em;padding:1em 2.2em;">Make Your Impact Today!</a>
     </div>
   </section>
 
   <!-- Impact Section -->
-  <section class="impact" style="background:#002244;color:#fff;padding:.5rem .25rem;text-align:center;border-radius:12px;margin:1px 10px;display:flex;justify-content:center;align-items:center;gap:2px;flex-wrap:wrap;">
-  <div style="font-weight:bold;font-size:1.3em;width:100%;margin-bottom:2px;">You have a worldwide impact</div>
-  <div style="font-weight:bold;font-size:1.2em;margin-bottom:2px;">20,297,336 people impacted</div>
-  <div style="font-weight:bold;font-size:1.2em;margin-bottom:2px;">186,000 water projects funded</div>
-  <div style="font-weight:bold;font-size:1.2em;">29 countries served</div>
+  <section class="impact">
+    <div style="font-size:1.3em;">You have a worldwide impact</div>
+    <div style="font-size:1.2em;">20,297,336 people impacted</div>
+    <div style="font-size:1.2em;">186,000 water projects funded</div>
+    <div style="font-size:1.2em;">29 countries served</div>
   </section>
 
   <!-- Footer -->
   <footer>
     &copy; 2025 charity: water. All rights reserved.
   </footer>
+
+  <!-- ====== MODALS ====== -->
+  <div id="takeaction" class="overlay">
+    <div class="overlay-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Take Action</h2>
+      <p>Placeholder message about how users can take action.</p>
+    </div>
+  </div>
+
+  <div id="about" class="overlay">
+    <div class="overlay-content">
+      <a href="#" class="close">&times;</a>
+      <h2>About Us</h2>
+      <p>Placeholder message about your organization.</p>
+    </div>
+  </div>
+
+  <div id="whywater" class="overlay">
+    <div class="overlay-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Why Water?</h2>
+      <p>Placeholder message explaining why clean water matters.</p>
+    </div>
+  </div>
+
+  <div id="signin" class="overlay">
+    <div class="overlay-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Sign In</h2>
+      <p>Placeholder sign-in instructions or form.</p>
+    </div>
+  </div>
+
+  <div id="give" class="overlay">
+    <div class="overlay-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Give 💧</h2>
+      <p>Placeholder donation instructions.</p>
+    </div>
+  </div>
 </body>
 </html>
