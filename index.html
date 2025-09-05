@@ -26,7 +26,7 @@
 
     header .logo {
       font-weight: bold;
-      color: #f2a900; /* charity: water yellow */
+      color: #f2a900;
     }
 
     nav a, nav button {
@@ -67,7 +67,7 @@
 
     .hero img {
       width: 100%;
-      height: 650px; /* Increased height for more sky */
+      height: 650px;
       object-fit: cover;
     }
 
@@ -109,6 +109,7 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
+      padding: 1rem;
     }
 
     .overlay:target {
@@ -119,9 +120,13 @@
       background: #fff;
       padding: 2rem;
       border-radius: 8px;
-      text-align: center;
-      max-width: 400px;
+      text-align: left;
+      width: 90%;
+      max-width: 900px;
+      max-height: 85vh;
+      overflow-y: auto;
       position: relative;
+      line-height: 1.75; /* easier reading */
     }
 
     .overlay-content h2 {
@@ -171,7 +176,9 @@
     <img src="img/hero image.jpg" alt="Hero background">
     <div class="hero-headline" style="position:absolute;top:20px;left:0;right:0;z-index:2;text-align:center;">
       <h1>Just $10 Can Give Clean Water to Someone in Need</h1>
-      <p style="margin:10px 0 0 0;font-size:1.1em;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;">Donating is easy and transparent. Each donation creates real impact, bringing health and hope to communities worldwide.</p>
+      <p style="margin:10px 0 0 0;font-size:1.1em;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;">
+        Donating is easy and transparent. Each donation creates real impact, bringing health and hope to communities worldwide.
+      </p>
     </div>
     <div style="position:absolute;left: 150px;bottom:64px;z-index:2;">
       <a href="#give" class="btn" style="font-size:1.0em;padding:1em 2.2em;">Make Your Impact Today!</a>
@@ -196,7 +203,15 @@
     <div class="overlay-content">
       <a href="#" class="close">&times;</a>
       <h2>Take Action</h2>
-      <p>Placeholder message about how users can take action.</p>
+      <p>
+        Safe drinking water is much more than a basic human need.  
+        It's the foundation for improved health, education, and economic opportunity.  
+        Where clean water flows, communities flourish.
+      </p>
+      <p>
+        Yet access to clean water is still out of reach for nearly 1 in 10 people on the planet.  
+        The good news: A gift of just <strong>$20 a month</strong> is enough to bring 6 people — an entire family — clean water each year.
+      </p>
     </div>
   </div>
 
@@ -204,7 +219,17 @@
     <div class="overlay-content">
       <a href="#" class="close">&times;</a>
       <h2>About Us</h2>
-      <p>Placeholder message about your organization.</p>
+      <p>
+        When charity: water began, we made a bold promise:  
+        <strong>100% of public donations</strong> would go directly to fund sustainable clean water projects.  
+        We’d even pay back credit card fees — meaning if a donor gave $100 with a card and we only got $97, we’d cover the $3 to ensure the full $100 reached the field.
+      </p>
+      <p>
+        Since we treat the clean water projects and operations sides of our business differently — separate purposes, separate fundraising goals, and separate bank accounts — we can guarantee that every public dollar donated helps bring clean water to people in need.
+      </p>
+      <p>
+        So far, more than <strong>1 million people</strong> from over 100 countries have given in this way.
+      </p>
     </div>
   </div>
 
@@ -212,7 +237,17 @@
     <div class="overlay-content">
       <a href="#" class="close">&times;</a>
       <h2>Why Water?</h2>
-      <p>Placeholder message explaining why clean water matters.</p>
+      <p>
+        <strong>703 million people</strong> in the world live without clean water.  
+        That’s nearly 1 in 10 people worldwide — or twice the population of the United States.
+      </p>
+      <p>
+        The majority live in isolated rural areas and spend hours every day walking to collect water for their family.  
+        Not only does walking for water keep children out of school or take up time that parents could be using to earn money, but the water often carries diseases that can make everyone sick.
+      </p>
+      <p>
+        But access to clean water means <strong>education, income, and health</strong> — especially for women and children.
+      </p>
     </div>
   </div>
 
@@ -220,7 +255,11 @@
     <div class="overlay-content">
       <a href="#" class="close">&times;</a>
       <h2>Sign In</h2>
-      <p>Placeholder sign-in instructions or form.</p>
+      <form style="display:flex;flex-direction:column;gap:12px;align-items:center;">
+        <input type="email" placeholder="Email" required style="padding:8px 12px;border-radius:4px;border:1px solid #ccc;width:90%;max-width:260px;">
+        <input type="password" placeholder="Password" required style="padding:8px 12px;border-radius:4px;border:1px solid #ccc;width:90%;max-width:260px;">
+        <button type="submit" class="btn" style="width:100%;max-width:260px;">Sign In</button>
+      </form>
     </div>
   </div>
 
@@ -228,7 +267,10 @@
     <div class="overlay-content">
       <a href="#" class="close">&times;</a>
       <h2>Give 💧</h2>
-      <p>Placeholder donation instructions.</p>
+      <p>
+        Your donation helps fund clean water projects worldwide.  
+        Even a small gift can create a lasting impact for families in need.
+      </p>
     </div>
   </div>
 </body>
