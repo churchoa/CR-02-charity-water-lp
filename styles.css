@@ -188,6 +188,50 @@ nav a:hover, nav button:hover {
   background: #4FC3F7; /* light blue on hover */
   color: #003366;
 }
+/* New Progress Section */
+.impact-progress {
+  background-color: #1a1a1a;
+  color: #ffc907;
+  margin-top: 30px;
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 16px 10px;
+  text-align: left;
+}
+
+.impact-progress h3 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.progress-row p {
+  margin: 0;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.progress-bar {
+  flex: 1; /* Takes up remaining space */
+  background: #333;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.progress-fill {
+  background: #ffc907;
+  height: 100%;
+  width: 0;
+  transition: width 1s ease-in-out;
+  border-radius: 25px 0 0 25px;
+}
 
 /* Footer */
 footer {
