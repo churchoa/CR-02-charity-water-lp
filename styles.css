@@ -45,6 +45,16 @@ header {
   z-index: 10;
 }
 
+/* Add space between navigation links and buttons in the header */
+nav a, nav button {
+  margin-left: 16px; /* adds space to the left of each nav item */
+}
+
+/* Remove the margin from the first navigation item so it aligns nicely */
+nav a:first-child, nav button:first-child {
+  margin-left: 0;
+}
+
 nav a:hover, nav button:hover {
   color: #FFC907;
 }
