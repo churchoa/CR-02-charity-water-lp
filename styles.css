@@ -129,7 +129,7 @@ nav a:hover, nav button:hover {
 .hero-cta {
   position: absolute;
   left: 150px;
-  bottom: 80px;
+  bottom: 60px; /* moved down a bit from 80px to 60px */
   transform: none;
   z-index: 2;
 }
@@ -138,9 +138,16 @@ nav a:hover, nav button:hover {
 .hero-cta .btn {
   padding: 0.6rem 1.6rem;
   font-size: 1.15rem;
+  font-weight: normal; /* not bold by default */
+}
+
+/* Make the hero CTA button text bold on hover */
+.hero-cta .btn:hover {
+  font-weight: bold;
 }
 
 /* Impact Section */
+/* Make impact stats stack vertically and look clickable */
 .impact {
   background: #003366;
   color: #FFF7E1;
@@ -148,6 +155,7 @@ nav a:hover, nav button:hover {
   padding: 1rem;
   border-radius: 12px;
   margin: 16px 10px;
+  /* No flex/grid for beginners */
 }
 
 .impact-title {
@@ -157,13 +165,28 @@ nav a:hover, nav button:hover {
   margin-bottom: 6px;
 }
 
+/* Make each stat a block so they stack vertically and are clearly visible */
 .impact-stat {
+  display: block; /* stack vertically */
   font-size: 1.1em;
-  background: #1A1A1A;
-  padding: 6px 12px;
+  background: #FFC907; /* yellow background */
+  color: #003366;      /* dark text for contrast */
+  padding: 12px 12px;
   border-radius: 6px;
-  margin: 3px 0;
-  display: inline-block;
+  margin: 10px auto;
+  text-decoration: none; /* remove underline */
+  cursor: pointer; /* show pointer on hover */
+  max-width: 320px;
+  border: none;
+  font-weight: bold; /* bold text */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07); /* subtle shadow */
+  transition: background 0.2s, color 0.2s;
+}
+
+/* On hover, highlight background and text */
+.impact-stat:hover {
+  background: #4FC3F7; /* light blue on hover */
+  color: #003366;
 }
 
 /* Footer */
@@ -309,4 +332,5 @@ textarea {
     width: 100%;
     max-width: 240px;
   }
+}
 }

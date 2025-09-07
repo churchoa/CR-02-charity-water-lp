@@ -42,9 +42,10 @@
   <!-- Impact Section -->
   <section class="impact">
     <div class="impact-title">You have a worldwide impact</div>
-    <div class="impact-stat">20,297,336 people impacted</div>
-    <div class="impact-stat">186,000 water projects funded</div>
-    <div class="impact-stat">29 countries served</div>
+    <!-- Each stat is now a link that opens a modal -->
+    <a href="#impact-people" class="impact-stat">20,297,336 people impacted</a>
+    <a href="#impact-projects" class="impact-stat">186,000 water projects funded</a>
+    <a href="#impact-countries" class="impact-stat">29 countries served</a>
   </section>
 
   <!-- Footer -->
@@ -137,6 +138,35 @@
         <textarea placeholder="Optional Message"></textarea>
         <button type="submit" class="btn">Donate</button>
       </form>
+    </div>
+  </div>
+
+  <!-- Impact Stat Modals -->
+  <div id="impact-people" class="overlay">
+    <div class="overlay-content">
+      <a href="#" class="close">&times;</a>
+      <h2>People Impacted</h2>
+      <p>
+        Over 20 million people have gained access to clean water thanks to your support. Every donation helps transform lives by improving health, education, and opportunity.
+      </p>
+    </div>
+  </div>
+  <div id="impact-projects" class="overlay">
+    <div class="overlay-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Water Projects Funded</h2>
+      <p>
+        186,000 water projects have been funded around the world, bringing safe water to communities in need. Each project is a step toward ending the water crisis.
+      </p>
+    </div>
+  </div>
+  <div id="impact-countries" class="overlay">
+    <div class="overlay-content">
+      <a href="#" class="close">&times;</a>
+      <h2>Countries Served</h2>
+      <p>
+        charity: water has brought clean water to 29 countries, focusing on areas with the greatest need. Your generosity helps us reach more people every year.
+      </p>
     </div>
   </div>
 </body>
